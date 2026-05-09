@@ -4,6 +4,7 @@ const meterFill = document.getElementById("meter-fill");
 const statusText = document.getElementById("status-text");
 const celebrateButton = document.getElementById("celebrate-button");
 const confettiLayer = document.getElementById("confetti-layer");
+const coolMessage = document.getElementById("cool-message");
 
 const flameTarget = {
   charge: 0,
@@ -135,4 +136,7 @@ celebrateButton.addEventListener("click", () => {
   celebrateButton.disabled = true;
   launchConfetti();
   statusText.textContent = "Super Amazing and Cool Birthday confetti incoming!";
+  window.setTimeout(() => {
+    coolMessage.classList.add("is-visible");
+  }, 900);
 });

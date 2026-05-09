@@ -512,6 +512,37 @@ h1 {
   transform: translateY(0);
 }
 
+.cool-message {
+  position: fixed;
+  top: 50%;
+  right: clamp(1rem, 4vw, 3rem);
+  z-index: 20;
+  padding: 1rem 1.2rem;
+  max-width: min(15rem, 34vw);
+  border: 1px solid rgba(255, 132, 197, 0.24);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(38, 15, 42, 0.92), rgba(17, 7, 20, 0.96));
+  box-shadow:
+    0 1rem 2.5rem rgba(0, 0, 0, 0.32),
+    0 0 2rem rgba(255, 73, 157, 0.2);
+  color: #ffd8ef;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  text-align: center;
+  opacity: 0;
+  transform: translate3d(1.5rem, -50%, 0) rotate(-3deg) scale(0.92);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.cool-message.is-visible {
+  opacity: 1;
+  transform: translate3d(0, -50%, 0) rotate(0deg) scale(1);
+}
+
 .confetti-layer {
   position: fixed;
   inset: 0;
@@ -599,6 +630,19 @@ h1 {
 
   .intro {
     font-size: 1rem;
+  }
+
+  .cool-message {
+    top: auto;
+    bottom: 1.2rem;
+    right: 1rem;
+    max-width: 11rem;
+    font-size: 1rem;
+    transform: translate3d(1rem, 0, 0) rotate(-3deg) scale(0.92);
+  }
+
+  .cool-message.is-visible {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
 }
 
